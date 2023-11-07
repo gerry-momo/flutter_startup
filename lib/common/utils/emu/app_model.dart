@@ -1,0 +1,4 @@
+enum AppModel{
+  dev,
+  prod
+}
