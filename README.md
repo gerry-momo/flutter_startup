@@ -2,6 +2,8 @@
 
 Flutter 初学者一键运行的简单 NoteApp
 
+[![Watch the video](https://github.com/gerry-momo/flutter_startup/blob/master/demo.mp4)](https://github.com/gerry-momo/flutter_startup/blob/master/demo.mp4)
+
 适合初学者或者set up一个新项目，俗称打窝
 使用Flutter 3.13.9
 
