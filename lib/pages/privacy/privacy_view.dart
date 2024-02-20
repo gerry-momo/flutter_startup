@@ -10,14 +10,8 @@ import '../../common/style/jn_style/jianan_utils.dart';
 import '../../global.dart';
 import 'privacy_logic.dart';
 
-class PrivacyPage extends StatefulWidget {
-  @override
-  _PrivacyPageState createState() => _PrivacyPageState();
-}
-
-class _PrivacyPageState extends State<PrivacyPage> {
-  final logic = Get.put(PrivacyLogic());
-  final state = Get.find<PrivacyLogic>().state;
+class PrivacyPage extends GetView<PrivacyLogic> {
+  const PrivacyPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -86,10 +80,13 @@ class _PrivacyPageState extends State<PrivacyPage> {
                                       child: NanUtils.boxContainer(
                                           height: 55,
                                           color: AppColor.greyTag,
-                                          child: const Center(child: Text("退出"))),
+                                          child:
+                                              const Center(child: Text("退出"))),
                                     ),
                                   ),
-                                  const SizedBox(width: 10,),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
                                   Expanded(
                                     flex: 2,
                                     child: Tapped(
@@ -104,8 +101,9 @@ class _PrivacyPageState extends State<PrivacyPage> {
                                           child: const Center(
                                               child: Text(
                                             "同意并进入",
-                                            style:
-                                                TextStyle(color: Colors.white,letterSpacing: 4),
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                letterSpacing: 4),
                                           ))),
                                     ),
                                   ),
@@ -122,11 +120,5 @@ class _PrivacyPageState extends State<PrivacyPage> {
         ),
       );
     });
-  }
-
-  @override
-  void dispose() {
-    Get.delete<PrivacyLogic>();
-    super.dispose();
   }
 }

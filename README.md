@@ -4,8 +4,8 @@ Flutter 初学者一键运行的简单 NoteApp
 
 [Watch the video](https://github.com/gerry-momo/flutter_startup/blob/master/demo.mp4)
 
-适合初学者或者set up一个新项目，俗称打窝
-使用Flutter 3.13.9
+适合初学者或者set up一个新项目
+使用Flutter 3.19
 
 可以直接拉取该项目直接进行快速开发，如果你数量的话，可能1~2天就能产出一个MVP
 或者自己新建项目，然后把lib目录替换过去，再把必要的依赖复制过去

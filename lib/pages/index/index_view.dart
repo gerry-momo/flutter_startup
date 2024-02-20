@@ -12,16 +12,8 @@ import '../../model/boxes.dart';
 import '../../model/h_leds.dart';
 import 'index_logic.dart';
 
-class IndexPage extends StatefulWidget {
+class IndexPage extends GetView<IndexLogic> {
   const IndexPage({super.key});
-
-  @override
-  _IndexPageState createState() => _IndexPageState();
-}
-
-class _IndexPageState extends State<IndexPage> {
-  final logic = Get.put(IndexLogic());
-  final state = Get.find<IndexLogic>().state;
 
   @override
   Widget build(BuildContext context) {
@@ -54,28 +46,28 @@ class _IndexPageState extends State<IndexPage> {
                           padding: const EdgeInsets.fromLTRB(8, 4, 8, 4),
                           child: NanUtils.boxContainer(
                               child: ListTile(
-                            onTap: () {
-                              transactions[index].done =
-                                  !transactions[index].done;
-                              transactions[index].save();
-                              logic.update();
-                            },
-                            onLongPress: () {
-                              transactions[index].delete();
-                              logic.update();
-                            },
-                            title: Text(transactions[index].title),
-                            leading: Icon((transactions[index].done)
-                                ? LineIcons.checkCircle
-                                : LineIcons.circle),
-                            trailing: Tapped(
                                 onTap: () {
-                                  Get.toNamed(AppRoutes.detail, arguments: {
-                                    'hTodo': transactions[index]
-                                  });
+                                  transactions[index].done =
+                                  !transactions[index].done;
+                                  transactions[index].save();
+                                  controller.update();
                                 },
-                                child: const Icon(LineIcons.edit)),
-                          )),
+                                onLongPress: () {
+                                  transactions[index].delete();
+                                  controller.update();
+                                },
+                                title: Text(transactions[index].title),
+                                leading: Icon((transactions[index].done)
+                                    ? LineIcons.checkCircle
+                                    : LineIcons.circle),
+                                trailing: Tapped(
+                                    onTap: () {
+                                      Get.toNamed(AppRoutes.detail, arguments: {
+                                        'hTodo': transactions[index]
+                                      });
+                                    },
+                                    child: const Icon(LineIcons.edit)),
+                              )),
                         );
                       },
                     );
@@ -101,10 +93,5 @@ class _IndexPageState extends State<IndexPage> {
       ),
     );
   }
-
-  @override
-  void dispose() {
-    Get.delete<IndexLogic>();
-    super.dispose();
-  }
 }
+
