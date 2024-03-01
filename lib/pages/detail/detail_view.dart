@@ -8,7 +8,9 @@ class DetailPage extends GetView<DetailLogic> {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<DetailLogic>(builder: (logic) {
+    return GetBuilder<DetailLogic>(
+        init: DetailLogic(),
+        builder: (logic) {
       return Scaffold(
         backgroundColor: Colors.orange,
         appBar: AppBar(

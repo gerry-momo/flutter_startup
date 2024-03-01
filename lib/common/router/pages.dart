@@ -17,7 +17,7 @@ class AppPages {
     // 首页
     GetPage(
       name: AppRoutes.initial,
-      page: () => const IndexPage(),
+      page: () => IndexPage(),
       middlewares: [
         RouteWelcomeMiddleware(priority: 1),
       ],
@@ -26,13 +26,13 @@ class AppPages {
     // 隐私页面
     GetPage(
       name: AppRoutes.privacy,
-      page: () => PrivacyPage(),
+      page: () => const PrivacyPage(),
 
     ),
 
     GetPage(
       name: AppRoutes.detail,
-      page: () => DetailPage(),
+      page: () => const DetailPage(),
 
     ),
 

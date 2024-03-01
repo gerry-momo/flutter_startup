@@ -13,7 +13,9 @@ import '../../model/h_leds.dart';
 import 'index_logic.dart';
 
 class IndexPage extends GetView<IndexLogic> {
-  const IndexPage({super.key});
+  IndexPage({super.key});
+
+  IndexLogic logic = Get.put(IndexLogic());
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,6 @@ class IndexPage extends GetView<IndexLogic> {
       backgroundColor: AppColor.blueBtn,
       appBar: AppBar(
         title: const Text("TODO"),
-
       ),
       body: SizedBox(
         width: Get.width,
@@ -38,7 +39,6 @@ class IndexPage extends GetView<IndexLogic> {
 
                     return ListView.builder(
                       itemCount: transactions.length,
-
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       itemBuilder: (BuildContext context, int index) {
@@ -46,28 +46,28 @@ class IndexPage extends GetView<IndexLogic> {
                           padding: const EdgeInsets.fromLTRB(8, 4, 8, 4),
                           child: NanUtils.boxContainer(
                               child: ListTile(
-                                onTap: () {
-                                  transactions[index].done =
+                            onTap: () {
+                              transactions[index].done =
                                   !transactions[index].done;
-                                  transactions[index].save();
-                                  controller.update();
+                              transactions[index].save();
+                              controller.update();
+                            },
+                            onLongPress: () {
+                              transactions[index].delete();
+                              controller.update();
+                            },
+                            title: Text(transactions[index].title),
+                            leading: Icon((transactions[index].done)
+                                ? LineIcons.checkCircle
+                                : LineIcons.circle),
+                            trailing: Tapped(
+                                onTap: () {
+                                  Get.toNamed(AppRoutes.detail, arguments: {
+                                    'hTodo': transactions[index]
+                                  });
                                 },
-                                onLongPress: () {
-                                  transactions[index].delete();
-                                  controller.update();
-                                },
-                                title: Text(transactions[index].title),
-                                leading: Icon((transactions[index].done)
-                                    ? LineIcons.checkCircle
-                                    : LineIcons.circle),
-                                trailing: Tapped(
-                                    onTap: () {
-                                      Get.toNamed(AppRoutes.detail, arguments: {
-                                        'hTodo': transactions[index]
-                                      });
-                                    },
-                                    child: const Icon(LineIcons.edit)),
-                              )),
+                                child: const Icon(LineIcons.edit)),
+                          )),
                         );
                       },
                     );
@@ -94,4 +94,3 @@ class IndexPage extends GetView<IndexLogic> {
     );
   }
 }
-

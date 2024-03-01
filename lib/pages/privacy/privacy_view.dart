@@ -15,7 +15,9 @@ class PrivacyPage extends GetView<PrivacyLogic> {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<PrivacyLogic>(builder: (logic) {
+    return GetBuilder<PrivacyLogic>(
+        init: PrivacyLogic(),
+        builder: (logic) {
       return Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
