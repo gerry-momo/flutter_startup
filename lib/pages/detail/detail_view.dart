@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_startup/common/style/color.dart';
 import 'package:get/get.dart';
 
 import 'detail_logic.dart';
@@ -12,7 +13,7 @@ class DetailPage extends GetView<DetailLogic> {
         init: DetailLogic(),
         builder: (logic) {
       return Scaffold(
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text(logic.state.hTodo.title),
         ),
@@ -20,7 +21,19 @@ class DetailPage extends GetView<DetailLogic> {
           width: Get.width,
           child: Column(
             children: [
-              Text("内容 ${logic.state.hTodo.context}"),
+              TextButton(onPressed: (){
+                controller.state.textEditingController.text += '';
+              }, child: const Text("插入表情")),
+
+              TextField(
+                controller: controller.state.textEditingController,
+                maxLines: null,
+                maxLength: 300,
+                style: const TextStyle(fontFamily: 'meme',fontSize: 30),
+                decoration: const InputDecoration(
+                  border: InputBorder.none,
+                ),
+              ),
               TextButton(
                   onPressed: () {
                     logic.state.hTodo.title = '修改后的标题';
