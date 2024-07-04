@@ -46,7 +46,7 @@ dependencies:
   hive_flutter: 1.1.0
   tapped: 2.0.0
   ndialog: 4.3.1
-  dio: ^5.4.3+1
+  dio: ^5.5.0
   flutter_easyloading: 3.0.5
   just_debounce_it: 4.1.0
   dotted_border: 2.1.0
