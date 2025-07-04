@@ -43,7 +43,7 @@ class AppTheme {
       unselectedItemColor: Color(0xffA2A5B9),
       selectedItemColor: AppColor.accentColor,
     ),
-    tabBarTheme: const TabBarTheme(
+    tabBarTheme: const TabBarThemeData(
       indicatorSize: TabBarIndicatorSize.label,
       labelColor: AppColor.accentColor,
       unselectedLabelColor: AppColor.secondaryText,
