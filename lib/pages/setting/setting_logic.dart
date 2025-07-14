@@ -1,26 +1,19 @@
 import 'package:get/get.dart';
-
 import '../../common/router/names.dart';
-import 'privacy_state.dart';
+import 'setting_state.dart';
 
-class PrivacyLogic extends GetxController {
-  final PrivacyState state = PrivacyState();
-
-  @override
-  void onReady() {
-    // TODO: implement onReady
-    super.onReady();
-  }
+class SettingLogic extends GetxController {
+  final SettingState state = SettingState();
 
   @override
   void onClose() {
-    // TODO: implement onClose
     super.onClose();
-    Get.delete<PrivacyLogic>();
+    Get.delete<SettingLogic>();
   }
 
   void goToUserAgreement() {
     //Get.toNamed(Routes.USER_AGREEMENT);
+    print('goToUserAgreement called');
     Get.toNamed(AppRoutes.userAgreement, arguments: {'title': '《用户协议》',
       'url':'https://st.music.163.com/official-terms?tab=service'
     });
@@ -31,4 +24,4 @@ class PrivacyLogic extends GetxController {
       'url':'https://st.music.163.com/official-terms?tab=privacy'
     });
   }
-}
+} 
