@@ -9,6 +9,7 @@ class DetailLogic extends GetxController {
   void onInit() {
     state.hTodo = Get.arguments['hTodo'];
     state.textEditingController.text = state.hTodo.context.toString();
+    state.textTitleController.text = state.hTodo.title.toString();
     super.onInit();
   }
 

@@ -6,6 +6,7 @@ class DetailState {
   late HTodo hTodo;
 
   TextEditingController textEditingController = TextEditingController();
+  TextEditingController textTitleController = TextEditingController();
 
   DetailState() {
     ///Initialize variables

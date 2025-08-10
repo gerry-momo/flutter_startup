@@ -1,5 +1,5 @@
 # Flutter Start Up
-
+## 一、概述
 Flutter 初学者一键运行的简单 NoteApp
 
 [Watch the video](https://github.com/gerry-momo/flutter_startup/blob/master/demo.mp4)
@@ -23,7 +23,7 @@ Flutter 初学者一键运行的简单 NoteApp
 小愿望是希望更多人体验flutter开发的快乐。这是一个个人的打窝分享，暂不支持Flutter经验较丰富的人（毕竟都有自己的窝）使用。
 
 
-##Android 跑不起来FAQ
+## 二、Android 跑不起来FAQ
 我的版本：
 ~~~
 flutter --version
